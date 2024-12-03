@@ -6,7 +6,7 @@ close(connection)
 
 check_if_report_safe <- function(report) {
   diff_report <- diff(report)
-  return(sum((diff_report >= 1 & diff_report <= 3)) == length(diff_report) |  sum(diff_report >= -3 & diff_report <= -1) == length(diff_report))
+  return(sum(diff_report >= 1 & diff_report <= 3) == length(diff_report) | sum(diff_report >= -3 & diff_report <= -1) == length(diff_report))
 }
 
 sum(sapply(reports, function(report) {
