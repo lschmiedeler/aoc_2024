@@ -9,7 +9,7 @@ close(connection)
 
 memory <- paste(memory, collapse = "")
 if (puzzle == 2) {
-  memory <- paste(str_split(memory, "(do\\(\\)|don't\\(\\))")[[1]][c(T, str_match_all(memory, "do\\(\\)|don't\\(\\)")[[1]][,1] == "do()")], collapse = "")
+  memory <- paste(str_split(memory, "do\\(\\)|don't\\(\\)")[[1]][c(T, str_match_all(memory, "do\\(\\)|don't\\(\\)")[[1]][,1] == "do()")], collapse = "")
 }
 
 (data.frame(str_match_all(memory, "mul\\((?<X>\\d{1,3}),(?<Y>\\d{1,3})\\)")[[1]]) %>%
